@@ -32,7 +32,7 @@ describe("GitCommands - Git Stream", () => {
         startingDir = process.cwd();
         tmpPath = tempPath();
         setupGitStreamTestRepo(tmpPath);
-        spawnSyncStub = stub(childProcess, "spawnSync").callsFake(() => ({status: 0}));
+        spawnSyncStub = stub(childProcess, "spawnSync").callsFake(() => (<childProcess.SpawnSyncReturns<Buffer>> {status: 0}));
     });
 
     beforeEach(() => {
